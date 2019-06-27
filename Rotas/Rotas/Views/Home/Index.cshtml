@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Rotas.Models.Noticia>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Rotas em ASP</h2>
+
+<div>
+    
+    <ul>
+        @foreach(string item in ViewBag.Categorias)
+        {
+            <li>
+                @Html.ActionLink(item, "MostrarCategoria", "Home", new { @categoria = item }, null)
+            </li>
+        }
+    </ul>
+
+</div>
+
+<div>
+
+    <ul>
+        @foreach(var item in Model)
+        {
+            <li>
+
+                @Html.ActionLink(item.Titulo, "MostrarNoticia", "Home", new
+                   {
+                       @noticiaId = item.NoticiaId,
+                       @categoria = item.Categoria.ToLower(),
+                       @titulo = item.Titulo.ToLower(),
+                       @conteudo = item.Conteudo,
+                       @data = item.Data
+                   }, null)
+
+                <em>@Html.DisplayFor(modelItem => item.Categoria)</em>
+                <b>@Html.DisplayFor(modelItem => item.Data)</b>
+
+            </li>
+        }
+    </ul>
+
+</div>
+
+<div>
+    @Html.ActionLink("Todas as notícias", "TodasAsNoticias", "Home")
+</div>
