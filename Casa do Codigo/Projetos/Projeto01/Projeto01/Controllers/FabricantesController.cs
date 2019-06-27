@@ -14,12 +14,13 @@ namespace Projeto01.Controllers
     {
         private EFContext context = new EFContext();
 
-        // GET: Fabricante
+        // GET: Fabricantes
         public ActionResult Index()
         {
             return View(context.Fabricantes.OrderBy(c => c.Nome));
         }
 
+        // GET: Create
         public ActionResult Create()
         {
             return View();
@@ -35,6 +36,7 @@ namespace Projeto01.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: Edit
         public ActionResult Edit(long? id)
         {
             if(id == null)
@@ -67,6 +69,7 @@ namespace Projeto01.Controllers
             return View(fabricante);
         }
 
+        // GET: Details
         public ActionResult Details(long? id)
         {
             if(id == null)
@@ -84,6 +87,7 @@ namespace Projeto01.Controllers
             return View(fabricante);
         }
 
+        // GET: Delete
         public ActionResult Delete(long? id)
         {
             if (id == null)
