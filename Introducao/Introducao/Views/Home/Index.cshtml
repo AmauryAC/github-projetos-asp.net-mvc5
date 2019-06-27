@@ -1,0 +1,77 @@
+﻿@model Introducao.Models.Pessoa
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Curso de ASP MVC</h2>
+<p>Curso com Hugo Vasconcelos</p>
+
+<!--
+<br />
+<br />
+
+<p> @ViewData["PessoaId"] </p>
+<p> @ViewData["Nome"] </p>
+<p> @ViewData["Tipo"] </p>
+
+<br />
+<br />
+
+<p> @ViewBag.PessoaId </p>
+<p> @ViewBag.Nome </p>
+<p> @ViewBag.Tipo </p>
+-->
+
+<br />
+
+<!--
+<p> @Model.Id </p>
+<p> @Model.Nome </p>
+<p> @Model.Tipo </p>
+-->
+
+<p>View Tipada</p>
+
+<!--
+<form action="Home/Lista" method="post">
+-->
+@using (Html.BeginForm("Lista", "Home", FormMethod.Post))
+{
+
+    <fieldset>
+       
+         <legend>Informações de pessoas</legend>
+
+        <div>
+            @Html.LabelFor(x => x.Id)
+        </div>
+        <div>
+            <!--<input type="number" value="@Model.Id" name="id" id="id" />-->
+            @Html.EditorFor(x => x.Id)
+        </div>
+
+        <div>
+            @Html.LabelFor(x => x.Nome)
+        </div>
+        <div>
+            @Html.EditorFor(x => x.Nome)
+        </div>
+
+        <div>
+            @Html.LabelFor(x => x.Tipo)
+        </div>
+        <div>
+            @Html.EditorFor(x => x.Tipo)
+        </div>
+
+        <br />
+        <input type="submit" value="Enviar" />
+
+    </fieldset>
+
+}
+
+<!--
+</form>
+-->
