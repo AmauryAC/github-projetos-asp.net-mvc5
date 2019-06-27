@@ -1,0 +1,20 @@
+-> Estrutura de pastas:
+
+App_Data: carregar dados do BD (informações)
+App_Start: 
+ -> BundleConfig.cs: organizar um único arquivo com os scripts que serão utilizados 
+ -> FilterConfig.cs: mensagens de erro e alertas
+ -> IdentityConfig.cs: executar alguns serviços de mensagens
+ -> RouteConfig.cs: carregar as rotas (endereço web)
+ -> Startup.Auth.cs: trabalhar autenticações
+Content: arquivos css, imagens
+
+Controlers: controllers da aplicação
+Models: models da aplicação
+Views: views da aplicação
+
+Fonts: fontes
+Scripts: arquivos js
+
+Global.asax: inicializa a aplicação
+Web.config: carrega as configurações, versões

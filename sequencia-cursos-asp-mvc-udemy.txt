@@ -1,0 +1,12 @@
+?A sequencia correta para os cursos de ASP NET MVC na Udemy é esta abaixo.
+
+1 - https://www.udemy.com/curso-de-asp-net-c-com-mvc-5/?
+2- https://www.udemy.com/asp-net-mvc-com-sql/?
+3 - https://www.udemy.com/criando-sistema-com-asp-net-em-mvc/?instructorPreviewMode=student_v4?
+
+4 - https://www.udemy.com/sistemas-com-asp-net-mvc-e-web-api/?instructorPreviewMode=student_v4?
+5 - https://www.udemy.com/sistema-asp-net-mvc-5-bootstrap-e-publicacao/?instructorPreviewMode=student_v4?
+6 - https://www.udemy.com/curso-de-asp-net-mvc-em-3-camadas/?
+7 - https://www.udemy.com/sistema-financeiro-com-asp-net-mvc-5/?instructorPreviewMode=student_v4?
+8 - https://www.udemy.com/sistema-web-com-asp-net-mvc-sistema-alunos/?
+9 - https://www.udemy.com/aplicativos-xamarin-com-web-services-api/?
