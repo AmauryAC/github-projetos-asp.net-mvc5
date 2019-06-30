@@ -1,0 +1,5 @@
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Modelo\bin\Debug\Modelo.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Modelo\bin\Debug\Modelo.pdb
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Modelo\obj\Debug\Modelo.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Modelo\obj\Debug\Modelo.pdb
