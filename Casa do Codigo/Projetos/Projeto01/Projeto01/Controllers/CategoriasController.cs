@@ -30,10 +30,17 @@ namespace Projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Categoria categoria)
         {
-            context.Categorias.Add(categoria);
-            context.SaveChanges();
+            try
+            {
+                context.Categorias.Add(categoria);
+                context.SaveChanges();
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Edit
@@ -44,9 +51,9 @@ namespace Projeto01.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Categoria categoria = context.Categorias.Find(id);
+            Categoria categoria = context.Categorias.Where(c => c.CategoriaId == id).Include("Produtos.Fabricante").First();
 
-            if(categoria == null)
+            if (categoria == null)
             {
                 return HttpNotFound();
             }
@@ -58,15 +65,22 @@ namespace Projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Categoria categoria)
         {
-            if(ModelState.IsValid)
+            try
             {
-                context.Entry(categoria).State = EntityState.Modified;
-                context.SaveChanges();
+                if (ModelState.IsValid)
+                {
+                    context.Entry(categoria).State = EntityState.Modified;
+                    context.SaveChanges();
 
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
+                }
+
+                return View(categoria);
             }
-
-            return View(categoria);
+            catch
+            {
+                return View(categoria);
+            }
         }
 
         // GET: Details
@@ -77,7 +91,7 @@ namespace Projeto01.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Categoria categoria = context.Categorias.Find(id);
+            Categoria categoria = context.Categorias.Where(c => c.CategoriaId == id).Include("Produtos.Fabricante").First();
 
             if(categoria == null)
             {
@@ -95,9 +109,9 @@ namespace Projeto01.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Categoria categoria = context.Categorias.Find(id);
+            Categoria categoria = context.Categorias.Where(c => c.CategoriaId == id).Include("Produtos.Fabricante").First();
 
-            if(categoria == null)
+            if (categoria == null)
             {
                 return HttpNotFound();
             }
@@ -109,14 +123,21 @@ namespace Projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(long id)
         {
-            Categoria categoria = context.Categorias.Find(id);
+            try
+            {
+                Categoria categoria = context.Categorias.Find(id);
 
-            context.Categorias.Remove(categoria);
-            context.SaveChanges();
+                context.Categorias.Remove(categoria);
+                context.SaveChanges();
 
-            TempData["Message"] = "Categoria " + categoria.Nome.ToUpper() + " foi removida";
+                TempData["Message"] = "Categoria " + categoria.Nome.ToUpper() + " foi removida";
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }

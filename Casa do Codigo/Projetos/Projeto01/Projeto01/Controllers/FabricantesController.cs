@@ -30,10 +30,17 @@ namespace Projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Fabricante fabricante)
         {
-            context.Fabricantes.Add(fabricante);
-            context.SaveChanges();
+            try
+            {
+                context.Fabricantes.Add(fabricante);
+                context.SaveChanges();
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Edit
@@ -44,9 +51,9 @@ namespace Projeto01.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Fabricante fabricante = context.Fabricantes.Find(id);
+            Fabricante fabricante = context.Fabricantes.Where(f => f.FabricanteId == id).Include("Produtos.Categoria").First();
 
-            if(fabricante == null)
+            if (fabricante == null)
             {
                 return HttpNotFound();
             }
@@ -58,15 +65,22 @@ namespace Projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Fabricante fabricante)
         {
-            if(ModelState.IsValid)
+            try
             {
-                context.Entry(fabricante).State = EntityState.Modified;
-                context.SaveChanges();
+                if (ModelState.IsValid)
+                {
+                    context.Entry(fabricante).State = EntityState.Modified;
+                    context.SaveChanges();
 
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
+                }
+
+                return View(fabricante);
             }
-
-            return View(fabricante);
+            catch
+            {
+                return View(fabricante);
+            }
         }
 
         // GET: Details
@@ -77,7 +91,7 @@ namespace Projeto01.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Fabricante fabricante = context.Fabricantes.Find(id);
+            Fabricante fabricante = context.Fabricantes.Where(f => f.FabricanteId == id).Include("Produtos.Categoria").First();
 
             if(fabricante == null)
             {
@@ -95,7 +109,7 @@ namespace Projeto01.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Fabricante fabricante = context.Fabricantes.Find(id);
+            Fabricante fabricante = context.Fabricantes.Where(f => f.FabricanteId == id).Include("Produtos.Categoria").First();
 
             if (fabricante == null)
             {
@@ -109,14 +123,21 @@ namespace Projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(long id)
         {
-            Fabricante fabricante = context.Fabricantes.Find(id);
+            try
+            {
+                Fabricante fabricante = context.Fabricantes.Find(id);
 
-            context.Fabricantes.Remove(fabricante);
-            context.SaveChanges();
+                context.Fabricantes.Remove(fabricante);
+                context.SaveChanges();
 
-            TempData["Message"] = "Fabricante " + fabricante.Nome.ToUpper() + " foi removido";
+                TempData["Message"] = "Fabricante " + fabricante.Nome.ToUpper() + " foi removido";
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }
