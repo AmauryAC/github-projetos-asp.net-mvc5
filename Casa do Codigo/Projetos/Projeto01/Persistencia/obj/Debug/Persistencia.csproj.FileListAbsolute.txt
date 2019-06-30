@@ -1,0 +1,12 @@
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\bin\Debug\Persistencia.dll.config
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\bin\Debug\Persistencia.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\bin\Debug\Persistencia.pdb
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\bin\Debug\EntityFramework.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\bin\Debug\EntityFramework.SqlServer.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\bin\Debug\Modelo.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\bin\Debug\Modelo.pdb
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\bin\Debug\EntityFramework.xml
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\bin\Debug\EntityFramework.SqlServer.xml
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\obj\Debug\Persistencia.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\obj\Debug\Persistencia.pdb

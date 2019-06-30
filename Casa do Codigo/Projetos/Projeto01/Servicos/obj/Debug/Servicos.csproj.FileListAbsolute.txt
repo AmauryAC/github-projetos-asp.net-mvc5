@@ -1,0 +1,11 @@
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Servicos\bin\Debug\Servicos.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Servicos\bin\Debug\Servicos.pdb
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Servicos\bin\Debug\Modelo.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Servicos\bin\Debug\Persistencia.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Servicos\bin\Debug\EntityFramework.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Servicos\bin\Debug\Modelo.pdb
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Servicos\bin\Debug\Persistencia.pdb
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Servicos\bin\Debug\EntityFramework.xml
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Servicos\obj\Debug\Servicos.csprojResolveAssemblyReference.cache
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Servicos\obj\Debug\Servicos.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Servicos\obj\Debug\Servicos.pdb
