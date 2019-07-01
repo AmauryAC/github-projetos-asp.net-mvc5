@@ -1,5 +1,5 @@
 ﻿using Modelo.Cadastros;
-using Projeto01.Contexts;
+using Servicos.Cadastros;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,12 +12,12 @@ namespace Projeto01.Controllers
 {
     public class FabricantesController : Controller
     {
-        private EFContext context = new EFContext();
+        private FabricanteServico fabricanteServico = new FabricanteServico();
 
         // GET: Fabricantes
         public ActionResult Index()
         {
-            return View(context.Fabricantes.OrderBy(c => c.Nome));
+            return View(fabricanteServico.ObterFabricantesClassificadosPorNome());
         }
 
         // GET: Create
@@ -30,10 +30,43 @@ namespace Projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Fabricante fabricante)
         {
+            return GravarFabricante(fabricante);
+        }
+
+        // GET: Edit
+        public ActionResult Edit(long? id)
+        {
+            return ObterVisaoFabricantePorId(id);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Fabricante fabricante)
+        {
+            return GravarFabricante(fabricante);
+        }
+
+        // GET: Details
+        public ActionResult Details(long? id)
+        {
+            return ObterVisaoFabricantePorId(id);
+        }
+
+        // GET: Delete
+        public ActionResult Delete(long? id)
+        {
+            return ObterVisaoFabricantePorId(id);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(long id)
+        {
             try
             {
-                context.Fabricantes.Add(fabricante);
-                context.SaveChanges();
+                Fabricante fabricante = fabricanteServico.EliminarFabricantePorId(id);
+
+                TempData["Message"] = "Fabricante " + fabricante.Nome.ToUpper() + " foi removido";
 
                 return RedirectToAction("Index");
             }
@@ -43,55 +76,14 @@ namespace Projeto01.Controllers
             }
         }
 
-        // GET: Edit
-        public ActionResult Edit(long? id)
+        private ActionResult ObterVisaoFabricantePorId(long? id)
         {
             if(id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Fabricante fabricante = context.Fabricantes.Where(f => f.FabricanteId == id).Include("Produtos.Categoria").First();
-
-            if (fabricante == null)
-            {
-                return HttpNotFound();
-            }
-
-            return View(fabricante);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(Fabricante fabricante)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    context.Entry(fabricante).State = EntityState.Modified;
-                    context.SaveChanges();
-
-                    return RedirectToAction("Index");
-                }
-
-                return View(fabricante);
-            }
-            catch
-            {
-                return View(fabricante);
-            }
-        }
-
-        // GET: Details
-        public ActionResult Details(long? id)
-        {
-            if(id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            Fabricante fabricante = context.Fabricantes.Where(f => f.FabricanteId == id).Include("Produtos.Categoria").First();
+            Fabricante fabricante = fabricanteServico.ObterFabricantePorId((long)id);
 
             if(fabricante == null)
             {
@@ -101,42 +93,24 @@ namespace Projeto01.Controllers
             return View(fabricante);
         }
 
-        // GET: Delete
-        public ActionResult Delete(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            Fabricante fabricante = context.Fabricantes.Where(f => f.FabricanteId == id).Include("Produtos.Categoria").First();
-
-            if (fabricante == null)
-            {
-                return HttpNotFound();
-            }
-
-            return View(fabricante);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(long id)
+        private ActionResult GravarFabricante(Fabricante fabricante)
         {
             try
             {
-                Fabricante fabricante = context.Fabricantes.Find(id);
+                if (ModelState.IsValid)
+                {
+                    fabricanteServico.GravarFabricante(fabricante);
 
-                context.Fabricantes.Remove(fabricante);
-                context.SaveChanges();
-
-                TempData["Message"] = "Fabricante " + fabricante.Nome.ToUpper() + " foi removido";
-
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View(fabricante);
+                }
             }
             catch
             {
-                return View();
+                return View(fabricante);
             }
         }
     }
