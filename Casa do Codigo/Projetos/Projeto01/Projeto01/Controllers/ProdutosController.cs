@@ -128,10 +128,14 @@ namespace Projeto01.Controllers
                     return RedirectToAction("Index");
                 }
 
+                PopularViewBag(produto);
+
                 return View(produto);
             }
             catch
             {
+                PopularViewBag(produto);
+
                 return View(produto);
             }
         }

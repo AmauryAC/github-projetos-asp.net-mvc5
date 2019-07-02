@@ -10,3 +10,5 @@ E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Pro
 E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
 E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\obj\Debug\Persistencia.dll
 E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\obj\Debug\Persistencia.pdb
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\obj\Debug\Persistencia.Migrations.InitialCreate.resources
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\Casa do Codigo\Projetos\Projeto01\Persistencia\obj\Debug\Persistencia.csproj.GenerateResource.Cache

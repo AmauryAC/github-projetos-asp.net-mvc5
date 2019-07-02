@@ -7,13 +7,6 @@
         <span class="input-group-addon">
             <i class="glyphicon glyphicon-user"></i>
         </span>
-        @Html.EditorFor(model => model.Nome, new
-           {
-               htmlAttributes = new
-               {
-                   @class = "form-control",
-                   disabled = "disabled"
-               }
-           })
+        @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
     </div>
 </div>

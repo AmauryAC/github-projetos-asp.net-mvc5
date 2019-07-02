@@ -19,11 +19,7 @@
 
             <a href="#" class="btn btn-danger" data-toggle="modal"
                data-target="#deleteConfirmationModal">Remover</a>
-            @Html.ActionLink("Retornar para a listagem", "Index", null, new
-            {
-                @class = "btn btn-info"
-            })
-        }
+            @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-info" }) }
     </div>
 </div>
 
@@ -48,11 +44,7 @@
                         Você está certo que deseja prosseguir?
                     </strong>
                 </p>
-                @using (Html.BeginForm("Delete", "Categorias", FormMethod.Post, new
-                {
-                    @id = "delete-form",
-                    role = "form"
-                }))
+                @using (Html.BeginForm("Delete", "Categorias", FormMethod.Post, new { @id = "delete-form", role = "form" }))
                 {
                     @Html.HiddenFor(m => m.CategoriaId)
                     @Html.AntiForgeryToken()

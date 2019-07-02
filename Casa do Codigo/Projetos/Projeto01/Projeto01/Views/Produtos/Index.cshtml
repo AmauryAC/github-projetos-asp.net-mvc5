@@ -47,18 +47,9 @@
                             @Html.DisplayFor(modelItem => item.Fabricante.Nome)
                         </td>
                         <td>
-                            @Html.ActionLink("Alterar", "Edit", new
-                            {
-                                id = item.ProdutoId
-                            }) |
-                                @Html.ActionLink("Detalhes", "Details", new
-                            {
-                                id = item.ProdutoId
-                            }) |
-                                @Html.ActionLink("Eliminar", "Delete", new
-                            {
-                                id = item.ProdutoId
-                            })
+                            @Html.ActionLink("Alterar", "Edit", new { id = item.ProdutoId }) |
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.ProdutoId }) |
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.ProdutoId })
                         </td>
                     </tr>
                 }
@@ -66,10 +57,7 @@
         </table>
     </div>
     <div class="panel-footer panel-info">
-        @Html.ActionLink("Registrar um novo PRODUTO", "Create", null, new
-        {
-            @class = "btn btn-success"
-        })
+        @Html.ActionLink("Registrar um novo PRODUTO", "Create", null, new { @class = "btn btn-success" })
     </div>
 </div>
 
