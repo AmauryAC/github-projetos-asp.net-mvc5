@@ -10,6 +10,7 @@
         Visualizando detalhes do PRODUTO a ser removido
     </div>
     <div class="panel-body">
+        @Html.HiddenFor(model => model.Logotipo)
         @Html.Partial("~/Areas/Cadastros/Views/Produtos/_PartialDetailsContentPanel.cshtml", Model)
     </div>
     <div class="panel-footer panel-info">

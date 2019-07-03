@@ -434,6 +434,7 @@
     <Folder Include="Areas\Seguranca\Views\Shared\" />
     <Folder Include="Areas\Tabelas\Models\" />
     <Folder Include="Areas\Tabelas\Views\Shared\" />
+    <Folder Include="TempData\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">

@@ -4,6 +4,7 @@ using Servicos.Tabelas;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -43,9 +44,9 @@ namespace Projeto01.Areas.Cadastros.Controllers
         // POST: Produtos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Produto produto)
+        public ActionResult Create(Produto produto, HttpPostedFileBase logotipo = null, string chkRemoverImagem = null)
         {
-            return GravarProduto(produto);
+            return GravarProduto(produto, logotipo, chkRemoverImagem);
         }
 
         // GET: Produtos/Edit/5
@@ -60,9 +61,9 @@ namespace Projeto01.Areas.Cadastros.Controllers
         // POST: Produtos/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Produto produto)
+        public ActionResult Edit(Produto produto, HttpPostedFileBase logotipo = null, string chkRemoverImagem = null)
         {
-            return GravarProduto(produto);
+            return GravarProduto(produto, logotipo, chkRemoverImagem);
         }
 
         // GET: Produtos/Delete/5
@@ -122,12 +123,25 @@ namespace Projeto01.Areas.Cadastros.Controllers
             }
         }
 
-        private ActionResult GravarProduto(Produto produto)
+        private ActionResult GravarProduto(Produto produto, HttpPostedFileBase logotipo, string chkRemoverImagem)
         {
             try
             {
                 if(ModelState.IsValid)
                 {
+                    if(chkRemoverImagem != null)
+                    {
+                        produto.Logotipo = null;
+                    }
+                    if((logotipo != null) && (logotipo.ContentType == "image/jpeg" || logotipo.ContentType == "image/png"))
+                    {
+                        produto.LogotipoMimeType = logotipo.ContentType;
+                        produto.Logotipo = SetLogotipo(logotipo);
+
+                        produto.NomeArquivo = logotipo.FileName;
+                        produto.TamanhoArquivo = logotipo.ContentLength;
+                    }
+
                     produtoServico.GravarProduto(produto);
 
                     return RedirectToAction("Index");
@@ -143,6 +157,38 @@ namespace Projeto01.Areas.Cadastros.Controllers
 
                 return View(produto);
             }
+        }
+
+        private byte[] SetLogotipo(HttpPostedFileBase logotipo)
+        {
+            var bytesLogotipo = new byte[logotipo.ContentLength];
+
+            logotipo.InputStream.Read(bytesLogotipo, 0, logotipo.ContentLength);
+
+            return bytesLogotipo;
+        }
+
+        public FileContentResult GetLogotipo(long id)
+        {
+            Produto produto = produtoServico.ObterProdutoPorId(id);
+
+            if(produto != null)
+            {
+                return File(produto.Logotipo, produto.LogotipoMimeType);
+            }
+
+            return null;
+        }
+
+        public ActionResult DownloadArquivo(long id)
+        {
+            Produto produto = produtoServico.ObterProdutoPorId(id);
+
+            FileStream fileStream = new FileStream(Server.MapPath("~/TempData/" + produto.NomeArquivo), FileMode.Create, FileAccess.Write);
+
+            fileStream.Close();
+
+            return File(fileStream.Name, produto.LogotipoMimeType, produto.NomeArquivo);
         }
     }
 }
