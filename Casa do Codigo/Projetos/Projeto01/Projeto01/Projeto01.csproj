@@ -297,6 +297,7 @@
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Index.cshtml" />
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Create.cshtml" />
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Edit.cshtml" />
+    <Content Include="Areas\Seguranca\Views\Admin\Details.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -378,6 +379,7 @@
     <Compile Include="Areas\Tabelas\Controllers\CategoriasController.cs" />
     <Compile Include="Areas\Cadastros\Controllers\FabricantesController.cs" />
     <Compile Include="Areas\Cadastros\Controllers\ProdutosController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\IdentityDbContextAplicacao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -418,6 +420,7 @@
     <Content Include="Areas\Cadastros\Views\Produtos\_PartialEditContentPanel.cshtml" />
     <Content Include="Areas\Cadastros\Views\Fabricantes\_PartialEditContentPanel.cshtml" />
     <Content Include="Areas\Tabelas\Views\Categorias\_PartialEditContentPanel.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -431,7 +434,6 @@
     <Folder Include="Areas\Seguranca\Views\Shared\" />
     <Folder Include="Areas\Tabelas\Models\" />
     <Folder Include="Areas\Tabelas\Views\Shared\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">

@@ -20,6 +20,7 @@ namespace Projeto01.Areas.Seguranca.Controllers
             return View(GerenciadorUsuario.Users);
         }
 
+        [Authorize(Roles = "Administradores")]
         public ActionResult Create()
         {
             return View();
@@ -51,27 +52,10 @@ namespace Projeto01.Areas.Seguranca.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Administradores")]
         public ActionResult Edit(string id)
         {
-            if(id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            Usuario usuario = GerenciadorUsuario.FindById(id);
-
-            if(usuario == null)
-            {
-                return HttpNotFound();
-            }
-
-            var uvm = new UsuarioViewModel();
-
-            uvm.Id = usuario.Id;
-            uvm.Nome = usuario.UserName;
-            uvm.Email = usuario.Email;
-
-            return View(uvm);
+            return ObterVisaoUsuarioPorId(id);
         }
 
         [HttpPost]
@@ -100,21 +84,16 @@ namespace Projeto01.Areas.Seguranca.Controllers
             return View(uvm);
         }
 
+        [Authorize(Roles = "Administradores")]
+        public ActionResult Details(string id)
+        {
+            return ObterVisaoUsuarioPorId(id);
+        }
+
+        [Authorize(Roles = "Administradores")]
         public ActionResult Delete(string id)
         {
-            if(id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            Usuario usuario = GerenciadorUsuario.FindById(id);
-
-            if(usuario == null)
-            {
-                return HttpNotFound();
-            }
-
-            return View(usuario);
+            return ObterVisaoUsuarioPorId(id);
         }
 
         [HttpPost]
@@ -154,6 +133,29 @@ namespace Projeto01.Areas.Seguranca.Controllers
             {
                 ModelState.AddModelError("", error);
             }
+        }
+
+        private ActionResult ObterVisaoUsuarioPorId(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Usuario usuario = GerenciadorUsuario.FindById(id);
+
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+
+            var uvm = new UsuarioViewModel();
+
+            uvm.Id = usuario.Id;
+            uvm.Nome = usuario.UserName;
+            uvm.Email = usuario.Email;
+
+            return View(uvm);
         }
     }
 }

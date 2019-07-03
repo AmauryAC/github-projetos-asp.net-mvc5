@@ -15,11 +15,13 @@ namespace Projeto01.Areas.Seguranca.Controllers
     public class PapelAdminController : Controller
     {
         // GET: Seguranca/PapelAdmin
+        [Authorize(Roles = "Administradores")]
         public ActionResult Index()
         {
             return View(RoleManager.Roles);
         }
 
+        [Authorize(Roles = "Administradores")]
         public ActionResult Create()
         {
             return View();
@@ -45,6 +47,7 @@ namespace Projeto01.Areas.Seguranca.Controllers
             return View(nome);
         }
 
+        [Authorize(Roles = "Administradores")]
         public ActionResult Edit(string id)
         {
             Papel papel = RoleManager.FindById(id);

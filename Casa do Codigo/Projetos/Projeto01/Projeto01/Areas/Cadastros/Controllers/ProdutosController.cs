@@ -18,18 +18,21 @@ namespace Projeto01.Areas.Cadastros.Controllers
         private FabricanteServico fabricanteServico = new FabricanteServico();
 
         // GET: Produtos
+        [Authorize(Roles = "Administradores")]
         public ActionResult Index()
         {
             return View(produtoServico.ObterProdutosClassificadosPorNome());
         }
 
         // GET: Produtos/Details/5
+        [Authorize(Roles = "Administradores")]
         public ActionResult Details(long? id)
         {
             return ObterVisaoProdutoPorId(id);
         }
 
         // GET: Produtos/Create
+        [Authorize(Roles = "Administradores")]
         public ActionResult Create()
         {
             PopularViewBag();
@@ -46,6 +49,7 @@ namespace Projeto01.Areas.Cadastros.Controllers
         }
 
         // GET: Produtos/Edit/5
+        [Authorize(Roles = "Administradores")]
         public ActionResult Edit(long? id)
         {
             PopularViewBag(produtoServico.ObterProdutoPorId((long)id));
@@ -62,6 +66,7 @@ namespace Projeto01.Areas.Cadastros.Controllers
         }
 
         // GET: Produtos/Delete/5
+        [Authorize(Roles = "Administradores")]
         public ActionResult Delete(long? id)
         {
             return ObterVisaoProdutoPorId(id);

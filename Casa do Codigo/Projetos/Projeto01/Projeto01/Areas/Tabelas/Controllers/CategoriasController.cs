@@ -15,12 +15,14 @@ namespace Projeto01.Areas.Tabelas.Controllers
         private CategoriaServico categoriaServico = new CategoriaServico();
 
         // GET: Categorias
+        [Authorize(Roles = "Administradores")]
         public ActionResult Index()
         {
             return View(categoriaServico.ObterCategoriasClassificadasPorNome());
         }
 
         // GET: Create
+        [Authorize(Roles = "Administradores")]
         public ActionResult Create()
         {
             return View();
@@ -34,6 +36,7 @@ namespace Projeto01.Areas.Tabelas.Controllers
         }
 
         // GET: Edit
+        [Authorize(Roles = "Administradores")]
         public ActionResult Edit(long? id)
         {
             return ObterVisaoCategoriaPorId(id);
@@ -47,12 +50,14 @@ namespace Projeto01.Areas.Tabelas.Controllers
         }
 
         // GET: Details
+        [Authorize(Roles = "Administradores")]
         public ActionResult Details(long? id)
         {
             return ObterVisaoCategoriaPorId(id);
         }
 
         // GET: Delete
+        [Authorize(Roles = "Administradores")]
         public ActionResult Delete(long? id)
         {
             return ObterVisaoCategoriaPorId(id);
