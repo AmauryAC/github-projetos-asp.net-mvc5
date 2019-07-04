@@ -1,6 +1,7 @@
 ﻿using Modelo.Cadastros;
 using Persistencia.DAL.Cadastros;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,11 @@ namespace Servicos.Cadastros
         public Produto EliminarProdutoPorId(long id)
         {
             return produtoDAL.EliminarProdutoPorId(id);
+        }
+
+        public IList ObterProdutosPorNome(string param)
+        {
+            return produtoDAL.ObterProdutosPorNome(param);
         }
     }
 }

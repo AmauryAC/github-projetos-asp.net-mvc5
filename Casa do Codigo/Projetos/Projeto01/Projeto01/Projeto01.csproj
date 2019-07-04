@@ -298,6 +298,9 @@
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Create.cshtml" />
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Edit.cshtml" />
     <Content Include="Areas\Seguranca\Views\Admin\Details.cshtml" />
+    <Content Include="Areas\Carrinho\Views\web.config" />
+    <Content Include="Areas\Carrinho\Views\Carrinhos\Create.cshtml" />
+    <Content Include="Areas\Carrinho\Views\Carrinhos\_ItensCarrinho.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -358,6 +361,22 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\external\jquery\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\images\ui-icons_444444_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\images\ui-icons_555555_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\images\ui-icons_777620_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\images\ui-icons_777777_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\jquery-ui.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\jquery-ui.min.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\jquery-ui.structure.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\jquery-ui.structure.min.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\jquery-ui.theme.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4.custom\jquery-ui.theme.min.css" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -368,6 +387,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Cadastros\CadastrosAreaRegistration.cs" />
+    <Compile Include="Areas\Carrinho\CarrinhoAreaRegistration.cs" />
+    <Compile Include="Areas\Carrinho\Controllers\CarrinhosController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AccountController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AdminController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\PapelAdminController.cs" />
@@ -379,6 +400,7 @@
     <Compile Include="Areas\Tabelas\Controllers\CategoriasController.cs" />
     <Compile Include="Areas\Cadastros\Controllers\FabricantesController.cs" />
     <Compile Include="Areas\Cadastros\Controllers\ProdutosController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\IdentityDbContextAplicacao.cs" />
     <Compile Include="Global.asax.cs">
@@ -421,6 +443,9 @@
     <Content Include="Areas\Cadastros\Views\Fabricantes\_PartialEditContentPanel.cshtml" />
     <Content Include="Areas\Tabelas\Views\Categorias\_PartialEditContentPanel.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Errors\General.cshtml" />
+    <Content Include="Views\Errors\Http400.cshtml" />
+    <Content Include="Views\Errors\Http404.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -431,6 +456,8 @@
   <ItemGroup>
     <Folder Include="Areas\Cadastros\Models\" />
     <Folder Include="Areas\Cadastros\Views\Shared\" />
+    <Folder Include="Areas\Carrinho\Models\" />
+    <Folder Include="Areas\Carrinho\Views\Shared\" />
     <Folder Include="Areas\Seguranca\Views\Shared\" />
     <Folder Include="Areas\Tabelas\Models\" />
     <Folder Include="Areas\Tabelas\Views\Shared\" />

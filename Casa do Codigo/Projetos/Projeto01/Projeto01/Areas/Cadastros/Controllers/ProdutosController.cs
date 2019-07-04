@@ -190,5 +190,12 @@ namespace Projeto01.Areas.Cadastros.Controllers
 
             return File(fileStream.Name, produto.LogotipoMimeType, produto.NomeArquivo);
         }
+
+        public JsonResult GetProdutosPorNome(string param)
+        {
+            var r = produtoServico.ObterProdutosPorNome(param);
+
+            return Json(r, JsonRequestBehavior.AllowGet); 
+        }
     }
 }

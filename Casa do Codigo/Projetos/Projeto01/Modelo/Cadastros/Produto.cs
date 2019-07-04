@@ -19,6 +19,9 @@ namespace Modelo.Cadastros
         [DataType(DataType.Date)]
         [Required(ErrorMessage = "Informe a data de cadastro do produto")]
         public DateTime? DataCadastro { get; set; }
+        [DisplayName("Valor Unitario")]
+        [Required(ErrorMessage = "Informe o valor do produto")]
+        public double ValorUnitario { get; set; }
 
         public string LogotipoMimeType { get; set; }
         public byte[] Logotipo { get; set; }
