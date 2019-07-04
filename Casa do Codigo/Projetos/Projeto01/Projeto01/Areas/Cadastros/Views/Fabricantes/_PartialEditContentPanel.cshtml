@@ -15,4 +15,52 @@
             @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
         </div>
     </div>
+    @if (Model == null)
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.EstadoID, ViewBag.EstadoID as IEnumerable<SelectListItem>, "Selecione um estado", new { @class = "form-control input-sm" })
+                @Html.ValidationMessageFor(model => model.EstadoID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cidade, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CidadeID, ViewBag.CidadeID as IEnumerable<SelectListItem>, "Selecione uma cidade", new { @class = "form-control input-sm", data_url = @Url.Action("GetCidadesDoEstado", "Cidades", new { area = "Tabelas" }) })
+                @Html.ValidationMessageFor(model => model.CidadeID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.EstadoID, null, "Selecione um estado", new { @class = "form-control input-sm" })
+                @Html.ValidationMessageFor(model => model.EstadoID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cidade, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CidadeID, null, "Selecione uma cidade", new { @class = "form-control input-sm", data_url = @Url.Action("GetCidadesDoEstado", "Cidades", new { area = "Tabelas" }) })
+                @Html.ValidationMessageFor(model => model.CidadeID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    }
+    <div class="form-group">
+        @Html.LabelFor(model => model.TipoPessoa, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="btn-group col-md-10">
+            @Html.RadioButtonFor(model => model.TipoPessoa, "Física") Física<br />
+            @Html.RadioButtonFor(model => model.TipoPessoa, "Jurídica") Jurídica
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.EstaAtivo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="btn-group col-md-10">
+            @Html.CheckBoxFor(model => model.EstaAtivo, "EstaAtivo")
+            Está Ativo<br />
+        </div>
+    </div>
 </div>

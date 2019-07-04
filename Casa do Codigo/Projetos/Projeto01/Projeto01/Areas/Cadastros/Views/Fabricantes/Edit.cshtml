@@ -36,9 +36,33 @@
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script type="text/javascript">
-            $(document).ready(function () {
-                $('li').removeClass("active");
-                $('#liFabricantes').addClass("active");
-            });
+        $(document).ready(function () {
+            $('li').removeClass("active");
+            $('#liFabricantes').addClass("active");
+        });
+        $(document).on("change", '#EstadoID', function (e) {
+            var estadoID = $(this).find(":selected").val();
+            GetCidades(estadoID, '#CidadeID');
+        });
+
+        function GetCidades(estado, campoCidade) {
+            var optionCampoCidade = campoCidade + ' option';
+            if (estado.length > 0) {
+                var url = $(campoCidade).data('url');
+                $.getJSON(url, { estadoID: estado }, function (cidade) {
+                    $(optionCampoCidade).remove();
+                    $(campoCidade).append('<option value="">Selecione uma cidade</option');
+                    for (i = 0; i < cidade.length; i++) {
+                        $(campoCidade).append('<option value="' + cidade[i].CidadeID + '">' + cidade[i].Nome + '</option');
+                    }
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    debugger;
+                    alert('Erro de conexão', 'Erro obtendo cidades');
+                });
+            } else {
+                $(optionCampoCidade).remove();
+                $(campoCidade).append('<option value=""></option');
+            }
+        }
     </script>
 }

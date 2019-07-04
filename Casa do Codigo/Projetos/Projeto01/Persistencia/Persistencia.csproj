@@ -53,6 +53,8 @@
     <Compile Include="DAL\Cadastros\FabricanteDAL.cs" />
     <Compile Include="DAL\Cadastros\ProdutoDAL.cs" />
     <Compile Include="DAL\Tabelas\CategoriaDAL.cs" />
+    <Compile Include="DAL\Tabelas\CidadeDAL.cs" />
+    <Compile Include="DAL\Tabelas\EstadoDAL.cs" />
     <Compile Include="Migrations\201907011345353_InitialCreate.cs" />
     <Compile Include="Migrations\201907011345353_InitialCreate.Designer.cs">
       <DependentUpon>201907011345353_InitialCreate.cs</DependentUpon>

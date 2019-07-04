@@ -396,6 +396,7 @@
     <Compile Include="Areas\Seguranca\Models\SegurancaViewModelos.cs" />
     <Compile Include="Areas\Seguranca\Models\Usuario.cs" />
     <Compile Include="Areas\Seguranca\SegurancaAreaRegistration.cs" />
+    <Compile Include="Areas\Tabelas\Controllers\CidadesController.cs" />
     <Compile Include="Areas\Tabelas\TabelasAreaRegistration.cs" />
     <Compile Include="Areas\Tabelas\Controllers\CategoriasController.cs" />
     <Compile Include="Areas\Cadastros\Controllers\FabricantesController.cs" />
@@ -460,6 +461,7 @@
     <Folder Include="Areas\Carrinho\Views\Shared\" />
     <Folder Include="Areas\Seguranca\Views\Shared\" />
     <Folder Include="Areas\Tabelas\Models\" />
+    <Folder Include="Areas\Tabelas\Views\Cidades\" />
     <Folder Include="Areas\Tabelas\Views\Shared\" />
     <Folder Include="TempData\" />
   </ItemGroup>

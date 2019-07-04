@@ -1,5 +1,6 @@
 ﻿using Modelo.Cadastros;
 using Servicos.Cadastros;
+using Servicos.Tabelas;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -13,6 +14,8 @@ namespace Projeto01.Areas.Cadastros.Controllers
     public class FabricantesController : Controller
     {
         private FabricanteServico fabricanteServico = new FabricanteServico();
+        private EstadoServico estadoServico = new EstadoServico();
+        private CidadeServico cidadeServico = new CidadeServico();
 
         // GET: Fabricantes
         [Authorize(Roles = "Administradores")]
@@ -25,6 +28,9 @@ namespace Projeto01.Areas.Cadastros.Controllers
         [Authorize(Roles = "Administradores")]
         public ActionResult Create()
         {
+            ViewBag.EstadoID = new SelectList(estadoServico.ObterEstadosClassificadosPorNome(), "EstadoID", "Nome");
+            ViewBag.CidadeID = new SelectList(cidadeServico.ObterCidadesPorEstado(null), "CidadeID", "Nome");
+
             return View();
         }
 
@@ -94,6 +100,9 @@ namespace Projeto01.Areas.Cadastros.Controllers
             {
                 return HttpNotFound();
             }
+
+            ViewBag.EstadoID = new SelectList(estadoServico.ObterEstadosClassificadosPorNome(), "EstadoID", "Nome", fabricante.EstadoID);
+            ViewBag.CidadeID = new SelectList(cidadeServico.ObterCidadesPorEstado(fabricante.EstadoID), "CidadeID", "Nome", fabricante.CidadeID);
 
             return View(fabricante);
         }
