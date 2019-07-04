@@ -1,0 +1,6 @@
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\ConexaoBD\bin\Debug\ConexaoBD.exe.config
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\ConexaoBD\bin\Debug\ConexaoBD.exe
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\ConexaoBD\bin\Debug\ConexaoBD.pdb
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\ConexaoBD\obj\Debug\ConexaoBD.csprojResolveAssemblyReference.cache
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\ConexaoBD\obj\Debug\ConexaoBD.exe
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\ConexaoBD\obj\Debug\ConexaoBD.pdb
