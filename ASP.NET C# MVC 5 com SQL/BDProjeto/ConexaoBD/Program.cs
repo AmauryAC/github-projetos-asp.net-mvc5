@@ -1,21 +1,23 @@
-﻿using System;
+﻿using BDProjeto.Aplicacao;
+using BDProjeto.Dominio;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConexaoBD
+namespace DOS
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //var usuario = new Usuario();
-            var usuarioAplicacao = new UsuarioAplicacao();
+            var user = new Usuario();
+            var app = UsuarioAplicacaoConstrutor.UsuarioApADO();
 
             // Insert e Update
-            /*Console.Write("Digite o nome do usuário: ");
+            Console.Write("Digite o nome do usuário: ");
             string nome = Console.ReadLine();
 
             Console.Write("Digite o cargo do usuário: ");
@@ -23,18 +25,15 @@ namespace ConexaoBD
 
             DateTime data = DateTime.Now;
 
-            usuario.Nome = nome;
-            usuario.Cargo = cargo;
-            usuario.Data = data;
+            user.Nome = nome;
+            user.Cargo = cargo;
+            user.Data = data;
             //usuario.Id = 5;
 
-            usuarioAplicacao.Salvar(usuario);*/
-
-            // Delete
-            //usuarioAplicacao.Excluir(7);
+            app.Salvar(user);
 
             // Select
-            var dados = usuarioAplicacao.ListarTodos();
+            var dados = app.ListarTodos();
 
             foreach(var usuario in dados)
             {

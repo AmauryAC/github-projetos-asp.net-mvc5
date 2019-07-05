@@ -1,0 +1,5 @@
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.Dominio\bin\Debug\BDProjeto.Dominio.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.Dominio\bin\Debug\BDProjeto.Dominio.pdb
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.Dominio\obj\Debug\BDProjeto.Dominio.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.Dominio\obj\Debug\BDProjeto.Dominio.pdb
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.Dominio\obj\Debug\BDProjeto.Dominio.csprojResolveAssemblyReference.cache

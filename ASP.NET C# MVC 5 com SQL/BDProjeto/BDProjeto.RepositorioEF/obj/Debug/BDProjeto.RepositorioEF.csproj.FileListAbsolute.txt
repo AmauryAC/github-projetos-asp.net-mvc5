@@ -1,0 +1,12 @@
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.RepositorioEF\bin\Debug\BDProjeto.RepositorioEF.dll.config
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.RepositorioEF\bin\Debug\BDProjeto.RepositorioEF.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.RepositorioEF\bin\Debug\BDProjeto.RepositorioEF.pdb
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.RepositorioEF\bin\Debug\EntityFramework.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.RepositorioEF\bin\Debug\EntityFramework.SqlServer.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.RepositorioEF\bin\Debug\EntityFramework.xml
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.RepositorioEF\bin\Debug\EntityFramework.SqlServer.xml
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.RepositorioEF\obj\Debug\BDProjeto.RepositorioEF.csprojResolveAssemblyReference.cache
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.RepositorioEF\obj\Debug\BDProjeto.RepositorioEF.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.RepositorioEF\obj\Debug\BDProjeto.RepositorioEF.pdb
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.RepositorioEF\bin\Debug\BDProjeto.Dominio.dll
+E:\Documentos Acadêmicos\Udemy\ASP.NET C# com MVC 5\ASP.NET C# MVC 5 com SQL\BDProjeto\BDProjeto.RepositorioEF\bin\Debug\BDProjeto.Dominio.pdb
